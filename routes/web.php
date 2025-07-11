@@ -1,8 +1,9 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
-use App\Models\Post;
+use App\Http\Controllers\RimaController;
 
 
 Route::get('/kontak', function () {
@@ -15,11 +16,5 @@ Route::get('/tentang', function () {
 Route::get('/', function () {
     return view('home ', ['title' => 'halaman utama']);
 });
-Route::get('/posts', function () {
-    return view('posts', ['title' => 'blog','posts'=>  Post::all()]);
-});
-Route::get('/posts/{slug}', function ($slug) {
-    
-    $post = Post::find($slug);
-    return view('post', ['title' => 'single blog', 'post' => $post]);
-});
+Route::get('/posts',[RimaController::class, 'index']);
+Route::get('/posts/{rima:slug}',[RimaController::class, 'single']);

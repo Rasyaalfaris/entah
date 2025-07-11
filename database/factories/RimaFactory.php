@@ -17,7 +17,11 @@ class RimaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => fake()->word(),
+         'slug' => fake()->slug(),
+         'category_id' => mt_rand(1,5),
+         'author_id' => mt_rand(1,5),
+         'content' => fake()->text()
         ];
     }
 }

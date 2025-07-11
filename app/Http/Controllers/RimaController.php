@@ -5,15 +5,26 @@ namespace App\Http\Controllers;
 use App\Models\rima;
 use App\Http\Requests\StorerimaRequest;
 use App\Http\Requests\UpdaterimaRequest;
+use Illuminate\Http\Request;
 
 class RimaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+public function single(rima $rima)
+{
+    return view('post', [
+        'title' => $rima->title,
+        'post' => $rima
+    ]);
+}
+     public function index()
     {
-        //
+        return view('posts',[
+            'posts' => rima::all(),
+            'title' => 'halaman posts'
+        ]);
     }
 
     /**

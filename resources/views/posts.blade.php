@@ -7,9 +7,10 @@
         
     <article class="py-8 max-w-screen-md  border-b border-gray-300 ">
         <a href="/posts/{{$post['slug'] }}" class="hover:text-blue-500">
-        <h4 class="text-xl font-semibold mb-2"> {{ $post['title'] }}</h4>
+        <h4 class="text-xl font-semibold mb-2"> {{ $post->title }}</h4>
         </a>
-        <a href="#" class="text-blue-500 hover:underline">{{ $post['author'] }}</a> | 22 february 2025
+        <a href="#" class="text-blue-500 hover:underline">{{ $post->author->name }}</a> {{ $post->created_at->diffForHumans() }}<br>
+             category: <a href="#" class="text-blue-500 hover:underline">{{ $post->cate->nama }}</a>
         <p class="text-gray-700">{{ Str::limit($post['content'],100 )}} </p>
         <div class="mt-4">
             <a href="/posts/{{$post['slug']  }}" class="text-blue-500 hover:underline">Baca selengkapnya</a>

@@ -11,15 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rimas', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('nama');
             $table->string('slug')->unique();
-            $table->unsignedBigInteger('author_id');
-            $table->foreign('author_id')->references('id')->on('Users');    
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories'); 
-            $table->text('content');
             $table->timestamps();
         });
     }
@@ -29,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rimas');
+        Schema::dropIfExists('categories');
     }
 };
