@@ -10,7 +10,7 @@
         <h4 class="text-xl font-semibold mb-2"> {{ $post->title }}</h4>
         </a>
         <a href="#" class="text-blue-500 hover:underline">{{ $post->author->name }}</a> {{ $post->created_at->diffForHumans() }}<br>
-             category: <a href="#" class="text-blue-500 hover:underline">{{ $post->cate->nama }}</a>
+             category: <a href="/category" class="text-blue-500 hover:underline">{{ $post->cate->nama }}</a>
         <p class="text-gray-700">{{ Str::limit($post['content'],100 )}} </p>
         <div class="mt-4">
             <a href="/posts/{{$post['slug']  }}" class="text-blue-500 hover:underline">Baca selengkapnya</a>

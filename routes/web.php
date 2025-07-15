@@ -16,5 +16,8 @@ Route::get('/tentang', function () {
 Route::get('/', function () {
     return view('home ', ['title' => 'halaman utama']);
 });
+Route::get('/category', function () {
+    return view('category ', ['title' => 'halaman utama']);
+});
 Route::get('/posts',[RimaController::class, 'index']);
 Route::get('/posts/{rima:slug}',[RimaController::class, 'single']);

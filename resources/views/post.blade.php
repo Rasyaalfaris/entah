@@ -8,7 +8,7 @@
         <a href="/posts/{{$post['slug'] }}" class="hover:text-blue-500">
         <h4 class="text-xl font-semibold mb-2"> {{ $post['title'] }}</h4>
         </a>
-        <a href="#" class="text-blue-500 hover:underline">{{ $post->author->name }}</a>
+        <a href="/category" class="text-blue-500 hover:underline">{{ $post->author->name }}</a>
         <a href="#" class="text-blue-500 hover:underline">{{ $post->cate->nama }}</a> {{ $post->created_at->diffForHumans() }}
         <p class="text-gray-700">{{ $post['content']}} </p>
         <div class="mt-4">
